@@ -1,0 +1,23 @@
+clc;
+clear;
+
+input_bits=[1 0 1 1 0 1];
+shift_reg=[0 0];
+encoded = [];
+fprintf('Input Bits: ');
+disp(input_bits);
+
+for i = 1:length(input_bits)
+    current = input_bits(i);
+
+    reg =[current shift_reg];
+
+    out1 = mod(reg(1) + reg(2)+reg(3),2); % G1 = 111
+    out2 = mod(reg(1)+reg(3),2); %
+
+    encoded = [encoded out1 out2];
+    shift_reg=[current shift_reg(1)];
+end
+
+fprintf('Encoded Bits: ');
+disp(encoded);

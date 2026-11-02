@@ -1,0 +1,16 @@
+clc;
+clear;
+
+reg = [1,0,0,1];
+
+fprintf('PN sequence: ');
+
+for i = 1:15
+    fprintf('%d',reg(4));
+
+    feedback = xor(reg(4),reg(1));
+
+    reg = [feedback,reg(1:3)];
+endfor
+
+fprintf('\n');

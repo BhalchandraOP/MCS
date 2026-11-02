@@ -1,0 +1,30 @@
+clc;
+clear all;
+close all;
+
+
+N=4;
+fprint("Hadamard Matrix")
+
+H= hadamard(N)
+
+fprint("Walsh Code")
+W=hadamard(N)
+
+%First Hadamard Code 1
+disp("Walse Code 1");
+W1= hadamard(1,:);
+disp(W1);
+
+disp("Walse Code 2")
+W2=hadamard(2,:)
+disp(W2);
+
+disp("Walse Code 3")
+W3=hadamard(3,:)
+disp(W3);
+
+disp("Walse Code 4")
+W4=hadamard(4,:)
+disp(W4);
+
