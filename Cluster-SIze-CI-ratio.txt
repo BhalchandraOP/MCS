@@ -14,3 +14,160 @@ xlabel("Cluster Size(N)");
 ylabel("C/I Ratio")
 title("Effect of Cluster Size on C/I Ratio")
 grid on;
+
+
+
+
+
+
+# Short Notes: C/I Ratio and Frequency Reuse
+
+## 1. Carrier-to-Interference Ratio (C/I)
+
+### Definition
+
+The Carrier-to-Interference Ratio (C/I) is the ratio of received carrier signal power to the total received co-channel interference power at the mobile receiver.
+
+It indicates the quality of the received signal. A higher C/I ratio means better signal quality and less interference.
+
+### Formula
+
+\\[ \boxed{\frac{C}{I}=\frac{\text{Carrier Power}}{\text{Interference Power}}} \\]
+
+In decibels (dB):
+
+\\[ \boxed{(C/I)\_{dB}=10\log\_{10}(C/I)} \\]
+
+For a hexagonal cellular system:
+
+\\[ \boxed{\frac{C}{I}\approx\frac{q^\gamma}{N_I}} \\]
+
+Where:
+
+- q = Frequency reuse ratio.
+- gamma = Path-loss exponent (usually 4 in the book's numerical examples).
+- N_I = Number of co-channel interfering cells (usually 6 in the first tier).
+
+Since:
+
+\\[ q=\sqrt{3K} \\]
+
+We get:
+
+\\[ \boxed{\frac{C}{I}\approx\frac{(\sqrt{3K})^\gamma}{N_I}} \\]
+
+For \\(N_I=6\\) and gamma=4:
+
+\\[ \boxed{(C/I)\_{dB}=1.76+20\log\_{10}(K)} \\]
+
+### Factors affecting C/I
+
+1. Cluster size \\(K\\).
+2. Frequency reuse distance \\(D\\).
+3. Cell radius \\(R\\).
+4. Path-loss exponent \\(\gamma\\).
+5. Number of co-channel interfering cells.
+
+### Methods to improve C/I
+
+- Increase cluster size.
+- Increase separation between co-channel cells.
+- Use directional antennas (sectoring).
+- Use antenna downtilt where appropriate.
+
+Important: Increasing cluster size improves C/I but reduces the number of channels available per cell.
+
+## 2. Frequency Reuse
+
+### Definition
+
+Frequency reuse is a technique in cellular communication in which the same set of frequencies is reused in different cells that are sufficiently separated from each other to minimize co-channel interference.
+
+### Diagram
+
+- A group of cells using different frequency sets is called a cluster.
+- The same frequency set is reused in another cluster.
+- Cells using the same frequencies are called co-channel cells.
+- Adequate distance is maintained between co-channel cells to reduce interference.
+
+### Important equations
+
+1\. Cluster size:
+
+\\[ \boxed{K=i^2+j^2+ij} \\]
+
+Where \\(i\\) and \\(j\\) are shift parameters.
+
+Common cluster sizes include:
+
+\\[ K=1,3,4,7,9,12,13,\ldots \\]
+
+2\. Frequency reuse distance:
+
+\\[ \boxed{D=R\sqrt{3K}} \\]
+
+Where:
+
+- \\(D\\) = Distance between nearest co-channel cell centres.
+- \\(R\\) = Radius of a cell.
+- \\(K\\) = Cluster size.
+
+3\. Frequency reuse ratio:
+
+\\[ \boxed{q=\frac{D}{R}=\sqrt{3K}} \\]
+
+4\. Channels per cell:
+
+If total available channels are \\(N\\):
+
+\\[ \boxed{\text{Channels per cell}=\frac{N}{K}} \\]
+
+### Advantages
+
+- Efficient utilization of limited frequency spectrum.
+- Supports a large number of mobile users.
+- Increases system capacity.
+- Allows the same frequencies to be reused across different geographical areas.
+
+### Limitations
+
+- Improper frequency planning causes co-channel interference.
+- Larger cluster size reduces the number of channels available per cell.
+- Adequate separation between co-channel cells is necessary.
+
+## 3. Relationship between C/I and Frequency Reuse
+
+These two concepts are directly related.
+
+Increase cluster size (K)
+
+Increase reuse distance (D)
+
+Reduce co-channel interference
+
+Increase C/I ratio
+
+However, increasing \\(K\\) reduces channels per cell, so there is a trade-off between system capacity and interference.
+
+## 4. Important formulas for examination
+
+| Parameter                  | Formula                          |
+| -------------------------- | -------------------------------- |
+| Cluster size               | (K=i^2+j^2+ij   
+          |
+| Reuse distance             | (D=R\sqrt{3K}  
+             |
+| Reuse ratio                | \\(q=D/R=\sqrt{3K}
+           |
+| Channels per cell          | (N/K 
+                       |
+| C/I in dB                  | (10\log\_{10}(C/I)   
+       |
+| General C/I approximation  | (C/I\approx q^\gamma/N_I
+   |
+| For \\(\gamma=4,\ N_I=6\\) | \\(C/I(dB)=1.76+20\log\_{10}K\\) |
+
+
+
+
+
